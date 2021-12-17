@@ -22,7 +22,6 @@
         "quotes": ["error", "single"],
         "indent": ["error", 2],
         "object-curly-spacing": ["error", "always"],
-        "react/prop-types": 0,
-        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+        "react/prop-types": 0
     }
 }

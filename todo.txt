@@ -1,0 +1,6 @@
+To do list:
+
+- Extract validations into own utils method
+- Extract all strings into JSON file
+- Complete rating section on form
+- trim() name and email on submit
