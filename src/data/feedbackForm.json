@@ -1,3 +1,9 @@
 {
-  "title": "Customer Feedback"
+  "title": "Customer Feedback",
+  "nameField": "Name",
+  "emailField": "Email",
+  "submit": "Submit",
+  "required": "Required",
+  "invalidName": "Invalid name",
+  "invalidEmail": "Invalid email address"
 }
