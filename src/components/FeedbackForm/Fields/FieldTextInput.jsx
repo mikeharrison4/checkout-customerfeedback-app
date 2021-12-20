@@ -1,4 +1,5 @@
 import React from 'react';
+import FieldLabel from './FieldLabel';
 
 const FieldTextInput = ({
   field,
@@ -11,25 +12,19 @@ const FieldTextInput = ({
   return (
     <div className={`relative w-full ${className}`}>
       <input
-        { ...field }
+        {...field}
         {...props}
+        autoComplete='off'
         disabled={isSubmitting}
         className={`bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 ${hasErrorOccurred ? 'border-pink-500' : ''}`}
-        autoComplete="off"
       />
-      <label
-        htmlFor={field.name}
-        className={`w-full absolute pointer-events-none left-0 top-1 text-xl cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all ${values[field.name] ? '-top-4 text-xs text-white' : ''}`}
-      >
-        <span>{label}</span>
-        { hasErrorOccurred
-          && (
-            <span className="absolute text-xs right-0 text-pink-500">
-              {errors[field.name]}
-            </span>
-          )
-        }
-      </label>
+      <FieldLabel
+        name={field.name}
+        label={label}
+        hasErrorOccurred={hasErrorOccurred}
+        error={errors[field.name]}
+        className={`w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all ${values[field.name] ? '-top-4 text-xs' : 'text-xl top-2'}`}
+      />
     </div>
   );
 };

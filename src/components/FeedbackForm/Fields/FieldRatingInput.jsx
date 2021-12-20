@@ -1,8 +1,10 @@
 import React from 'react';
 import StarRating from './StarRating';
+import RATING_COUNT from '../../../constants/ratingCount';
 
 const FieldRatingInput = ({
   field,
+  label,
   form: { values, setFieldValue },
 }) => {
   return (
@@ -11,12 +13,12 @@ const FieldRatingInput = ({
         htmlFor={field.name}
         className="text-xl"
       >
-        Rating
+        {label}
       </label>
       <StarRating
         value={values.rating}
         setFieldValue={setFieldValue}
-        ratingLength={5}
+        ratingCount={RATING_COUNT}
         activeColor="text-white"
         inactiveColor="text-slate-500"
       />

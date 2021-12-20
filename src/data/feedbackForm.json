@@ -1,7 +1,9 @@
 {
   "title": "Customer Feedback",
-  "nameField": "Name",
-  "emailField": "Email",
+  "name": "Name",
+  "email": "Email",
+  "rating": "Rating",
+  "comment": "Leave a comment here...",
   "submit": "Submit",
   "required": "Required",
   "invalidName": "Invalid name",

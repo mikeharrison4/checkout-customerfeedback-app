@@ -1,5 +1,46 @@
 {
-  "data": [
-    "placeholder"
+  "comments": [
+    {
+      "id": 1,
+      "name": "Mike Harrison",
+      "email": "mikeyharrison4@gmail.com",
+      "rating": 4,
+      "comment": "This is the comment"
+    },
+    {
+      "id": 2,
+      "name": "Kirsty Hollick",
+      "email": "kirstyhollick@gmail.com",
+      "rating": 2,
+      "comment": "This is the comment, but from another person"
+    },
+    {
+      "id": 3,
+      "name": "Louis Rowland",
+      "email": "lrowland@hotmail.com",
+      "rating": 5,
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut"
+    },
+    {
+      "name": "Alison Harrison",
+      "email": "davidh109@hotmail.com",
+      "rating": 3,
+      "comment": "asx",
+      "id": 4
+    },
+    {
+      "name": "david harrison",
+      "email": "davidh109@hotmail.com",
+      "rating": 4,
+      "comment": "wf",
+      "id": 5
+    },
+    {
+      "name": "Alison Harrison",
+      "email": "davidh109@hotmail.com",
+      "rating": 3,
+      "comment": "sdf",
+      "id": 6
+    }
   ]
 }

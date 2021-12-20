@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    input:-webkit-autofill {
+        transition: background-color 600000s 0s, color 600000s 0s;
+    }
+}

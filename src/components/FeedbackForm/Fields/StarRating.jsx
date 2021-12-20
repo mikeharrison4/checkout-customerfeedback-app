@@ -5,12 +5,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 const StarRating = ({
   value,
   setFieldValue, 
-  ratingLength,
+  ratingCount,
   activeColor,
   inactiveColor
 }) => {
   const [hoverRating, setHoverRating] = useState(value);
-  const stars = Array.from({ length: ratingLength },
+  const stars = Array.from({ length: ratingCount },
     () => <FontAwesomeIcon icon={faStar} />
   );
 
