@@ -9,6 +9,7 @@ import axios from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
 import LoadingSpinner from '../Util/LoadingSpinner';
 import ResponseMessage from './ResponseMessage';
+import Button from '../Util/Button';
 
 const initialFormValues = {
   name: '',
@@ -86,15 +87,16 @@ const FeedbackForm = () => {
               />
             </div>
             <div>
-              <button
+              <Button
                 type="submit"
                 disabled={isSubmitting}
+                className="text-primary bg-white opacity-100 hover:opacity-75"
               >
                 <span className="flex items-center">
                   { isSubmitting && <LoadingSpinner className="mr-4" /> }
                   {content.submit}
                 </span>
-              </button>
+              </Button>
             </div>
           </Form>
         )}
