@@ -20,7 +20,7 @@ const FieldTextArea = ({
         label={label}
         hasErrorOccurred={hasErrorOccurred}
         error={errors[field.name]}
-        className={`text-xl w-full absolute pointer-events-none left-0 top-8 cursor-text peer-focus:text-xs peer-focus:-top-6 transition-all  ${values[field.name] ? '-top-6 text-xs' : ''}`}
+        className={`w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-6 transition-all  ${values[field.name] ? '-top-6 text-xs' : 'top-8 text-xl'}`}
       />
     </div>
   );

@@ -7,3 +7,5 @@ To do list:
 
 - add propTypes?
 - make BG the same gradient as checkout.com
+- add pagination to comments
+- animate responseMessage popup so it transitions nicely

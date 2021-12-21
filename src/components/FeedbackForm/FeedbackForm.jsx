@@ -7,6 +7,8 @@ import FieldRatingInput from './Fields/FieldRatingInput';
 import FieldTextArea from './Fields/FieldTextArea';
 import axios from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
+import LoadingSpinner from '../Util/LoadingSpinner';
+import ResponseMessage from './ResponseMessage';
 
 const initialFormValues = {
   name: '',
@@ -22,16 +24,24 @@ const postComment = async (formValues) => await axios.post(
 
 const FeedbackForm = () => {
   const queryClient = useQueryClient();
+  let responseMessage = '';
 
   const { mutate: addComment, isSuccess, isError } = useMutation(postComment, {
     onSuccess: () => queryClient.invalidateQueries('comments')
   });
 
-  const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
+  const handleFormSubmit = async (values, { resetForm }) => {
     await addComment(values);
-    setSubmitting(false);
     resetForm({ values: '' });
   };
+
+  if (isError) {
+    responseMessage = content.responseMessageFailure;
+  }
+
+  if (isSuccess) {
+    responseMessage = content.responseMessageSuccess;
+  }
 
   return (
     <>
@@ -80,12 +90,21 @@ const FeedbackForm = () => {
                 type="submit"
                 disabled={isSubmitting}
               >
-                {!isSubmitting ? content.submit : 'Submitting..'}
+                <span className="flex items-center">
+                  { isSubmitting && <LoadingSpinner className="mr-4" /> }
+                  {content.submit}
+                </span>
               </button>
             </div>
           </Form>
         )}
       </Formik>
+      { responseMessage && (
+        <ResponseMessage
+          message={responseMessage}
+          isError={isError}
+        />
+      ) }
     </>
   );
 };

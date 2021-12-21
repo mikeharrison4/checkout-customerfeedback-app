@@ -7,5 +7,7 @@
   "submit": "Submit",
   "required": "Required",
   "invalidName": "Invalid name",
-  "invalidEmail": "Invalid email address"
+  "invalidEmail": "Invalid email address",
+  "responseMessageSuccess": "Comment posted successfully! Thanks for your feedback :)",
+  "responseMessageFailure": "Oh no! Something went wrong. Please try again"
 }

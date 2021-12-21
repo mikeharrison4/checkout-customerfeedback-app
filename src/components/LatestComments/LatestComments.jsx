@@ -3,6 +3,7 @@ import content from '../../data/latestComments.json';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import Comment from './Comment';
+import LoadingSpinner from '../Util/LoadingSpinner';
 
 const fetchComments = async () => await axios.get('http://localhost:3001/comments');
 
@@ -16,7 +17,11 @@ const LatestComments = () => {
   });
 
   if (isLoading) {
-    return 'loading...'; // loading spinner to go here
+    return (
+      <div className="flex justify-center items-center">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   if (isError) {
