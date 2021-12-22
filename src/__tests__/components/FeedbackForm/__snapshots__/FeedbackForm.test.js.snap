@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedbackForm.js should render correctly when form has been submitted and isError is true 1`] = `
+<Fragment>
+  <h1
+    className="text-5xl text-white font-bold tracking-wider pb-4"
+  >
+    Customer Feedback
+  </h1>
+  <Formik
+    initialValues={
+      Object {
+        "comment": "",
+        "email": "",
+        "name": "",
+        "rating": 3,
+      }
+    }
+    onSubmit={[Function]}
+    validate={[Function]}
+  >
+    <Component />
+  </Formik>
+  <ResponseMessage
+    isError={true}
+    message="Oh no! Something went wrong. Please try again"
+  />
+</Fragment>
+`;
+
+exports[`FeedbackForm.js should render correctly when form has been submitted and isSuccess is true 1`] = `
+<Fragment>
+  <h1
+    className="text-5xl text-white font-bold tracking-wider pb-4"
+  >
+    Customer Feedback
+  </h1>
+  <Formik
+    initialValues={
+      Object {
+        "comment": "",
+        "email": "",
+        "name": "",
+        "rating": 3,
+      }
+    }
+    onSubmit={[Function]}
+    validate={[Function]}
+  >
+    <Component />
+  </Formik>
+  <ResponseMessage
+    isError={false}
+    message="Comment posted successfully! Thanks for your feedback :)"
+  />
+</Fragment>
+`;
+
+exports[`FeedbackForm.js should render correctly when the form has not been submitted 1`] = `
+<Fragment>
+  <h1
+    className="text-5xl text-white font-bold tracking-wider pb-4"
+  >
+    Customer Feedback
+  </h1>
+  <Formik
+    initialValues={
+      Object {
+        "comment": "",
+        "email": "",
+        "name": "",
+        "rating": 3,
+      }
+    }
+    onSubmit={[Function]}
+    validate={[Function]}
+  >
+    <Component />
+  </Formik>
+</Fragment>
+`;
+
+exports[`FeedbackForm.js should render the formik children fields correctly when isSubmitting is false 1`] = `
+<Form
+  className="text-white"
+>
+  <div
+    className="mt-8 flex justify-between"
+  >
+    <Field
+      className="mr-2"
+      component={[Function]}
+      label="Name"
+      name="name"
+      pattern="[a-z_A-Z\\\\s]+"
+    />
+    <Field
+      className="ml-2"
+      component={[Function]}
+      label="Email"
+      name="email"
+      type="email"
+    />
+  </div>
+  <div
+    className="mt-12"
+  >
+    <Field
+      component={[Function]}
+      label="Leave a comment here..."
+      name="comment"
+    />
+  </div>
+  <div
+    className="mt-12 mb-8"
+  >
+    <Field
+      component={[Function]}
+      label="Rating"
+      name="rating"
+    />
+  </div>
+  <div>
+    <Button
+      aria-label="Submit"
+      className="text-primary bg-white"
+      disabled={false}
+      id="submit"
+      type="submit"
+    >
+      <span
+        className="flex items-center"
+      >
+        Submit
+      </span>
+    </Button>
+  </div>
+</Form>
+`;
+
+exports[`FeedbackForm.js should render the formik children fields correctly when isSubmitting is true 1`] = `
+<Form
+  className="text-white"
+>
+  <div
+    className="mt-8 flex justify-between"
+  >
+    <Field
+      className="mr-2"
+      component={[Function]}
+      label="Name"
+      name="name"
+      pattern="[a-z_A-Z\\\\s]+"
+    />
+    <Field
+      className="ml-2"
+      component={[Function]}
+      label="Email"
+      name="email"
+      type="email"
+    />
+  </div>
+  <div
+    className="mt-12"
+  >
+    <Field
+      component={[Function]}
+      label="Leave a comment here..."
+      name="comment"
+    />
+  </div>
+  <div
+    className="mt-12 mb-8"
+  >
+    <Field
+      component={[Function]}
+      label="Rating"
+      name="rating"
+    />
+  </div>
+  <div>
+    <Button
+      aria-label="Submit"
+      className="text-primary bg-white"
+      disabled={true}
+      id="submit"
+      type="submit"
+    >
+      <span
+        className="flex items-center"
+      >
+        <LoadingSpinner
+          className="mr-4"
+        />
+        Submit
+      </span>
+    </Button>
+  </div>
+</Form>
+`;

@@ -1,11 +1,8 @@
 To do list:
 
-- Extract validations into own utils method -> √
-- Extract all strings into JSON file - √
-- Complete rating section on form - √
 - trim() name and email on submit
-
 - add propTypes?
 - make BG the same gradient as checkout.com
 - add pagination to comments
 - animate responseMessage popup so it transitions nicely
+- update Read.me

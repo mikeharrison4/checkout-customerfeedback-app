@@ -10,6 +10,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import LoadingSpinner from '../Util/LoadingSpinner';
 import ResponseMessage from './ResponseMessage';
 import Button from '../Util/Button';
+import { usePostComment } from './usePostComment';
 
 const initialFormValues = {
   name: '',
@@ -18,18 +19,20 @@ const initialFormValues = {
   comment: ''
 };
 
-const postComment = async (formValues) => await axios.post(
-  'http://localhost:3001/comments',
-  { ...formValues }
-);
+// const postComment = async (formValues) => await axios.post(
+//   'http://localhost:3001/comments',
+//   { ...formValues }
+// );
 
 const FeedbackForm = () => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   let responseMessage = '';
 
-  const { mutate: addComment, isSuccess, isError } = useMutation(postComment, {
-    onSuccess: () => queryClient.invalidateQueries('comments')
-  });
+  // const { mutate: addComment, isSuccess, isError } = useMutation(postComment, {
+  //   onSuccess: () => queryClient.invalidateQueries('comments')
+  // });
+
+  const { addComment, isSuccess, isError } = usePostComment();
 
   const handleFormSubmit = async (values, { resetForm }) => {
     await addComment(values);
@@ -88,6 +91,7 @@ const FeedbackForm = () => {
             </div>
             <div>
               <Button
+                id='submit'
                 type="submit"
                 disabled={isSubmitting}
                 className="text-primary bg-white"
