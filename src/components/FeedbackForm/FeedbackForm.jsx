@@ -90,7 +90,8 @@ const FeedbackForm = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="text-primary bg-white opacity-100 hover:opacity-75"
+                className="text-primary bg-white"
+                aria-label={content.submit}
               >
                 <span className="flex items-center">
                   { isSubmitting && <LoadingSpinner className="mr-4" /> }

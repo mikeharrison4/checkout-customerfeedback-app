@@ -14,7 +14,8 @@ const FieldTextInput = ({
       <input
         {...field}
         {...props}
-        autoComplete='off'
+        id={field.name}
+        aria-labelledby={label}
         disabled={isSubmitting}
         className={`bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 ${hasErrorOccurred ? 'border-pink-500' : ''}`}
       />

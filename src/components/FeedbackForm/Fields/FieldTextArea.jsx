@@ -13,6 +13,8 @@ const FieldTextArea = ({
       <textarea
         {...field}
         {...props}
+        id={field.name}
+        aria-labelledby={label}
         className={`bg-transparent border-b peer w-full min-h-[75px] focus:outline-none ${hasErrorOccurred ? 'border-pink-500' : ''}`}
       />
       <FieldLabel

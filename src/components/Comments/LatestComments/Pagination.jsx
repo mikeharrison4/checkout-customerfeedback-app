@@ -19,6 +19,7 @@ const Pagination = ({
           key={pageNumber}
           onClick={() => paginate(pageNumber)}
           className={`mr-5 p-4 ${currentPage === pageNumber ? 'bg-primary text-white' : ''}`}
+          aria-labelledby={`Go to page ${pageNumber}`}
         >
           {pageNumber}
         </button>

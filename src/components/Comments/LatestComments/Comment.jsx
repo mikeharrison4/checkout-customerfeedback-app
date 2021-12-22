@@ -1,5 +1,5 @@
 import React from 'react';
-import RATING_COUNT from '../../constants/ratingCount';
+import RATING_COUNT from '../../../constants/ratingCount';
 
 const Comment = ({
   name,

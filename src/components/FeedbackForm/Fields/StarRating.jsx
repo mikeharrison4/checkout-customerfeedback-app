@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const StarRating = ({
+  id,
   value,
   setFieldValue, 
   ratingCount,
@@ -15,11 +16,11 @@ const StarRating = ({
   );
 
   const handleStarClick = rating => {
-    setFieldValue('rating', rating + 1);
+    setFieldValue(id, rating + 1);
   };
 
   return (
-    <div className="py-3 text-2xl">
+    <div id={id} className="py-3 text-2xl">
       { stars.map((star, idx) => {
         let starColor = inactiveColor;
         if (idx < value || idx < hoverRating) {

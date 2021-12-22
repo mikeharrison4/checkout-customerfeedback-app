@@ -1,7 +1,7 @@
 import React from 'react';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import Container from './components/Util/Container';
-import LatestComments from './components/LatestComments/LatestComments';
+import Comments from './components/Comments/Comments';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <FeedbackForm />
       </Container>
       <Container>
-        <LatestComments />
+        <Comments />
       </Container>
     </div>
   );

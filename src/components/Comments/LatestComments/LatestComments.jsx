@@ -1,36 +1,10 @@
 import React, { useState } from 'react';
-import content from '../../data/latestComments.json';
-import { useQuery } from 'react-query';
-import axios from 'axios';
+import content from '../../../data/comments.json';
 import Comment from './Comment';
-import LoadingSpinner from '../Util/LoadingSpinner';
 import Pagination from './Pagination';
 
-const fetchComments = async () => await axios.get('http://localhost:3001/comments');
-
-const LatestComments = () => {
-  const [comments, setComments] = useState([]);
+const LatestComments = ({ comments }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
-  const {
-    isLoading,
-    isError,
-  } = useQuery('comments', fetchComments, {
-    retry: 1,
-    onSuccess: (comments) => setComments([...comments.data.reverse()]),
-  });
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center">
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
-  if (isError) {
-    return content.loadError;
-  }
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);

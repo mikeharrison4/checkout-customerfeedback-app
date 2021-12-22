@@ -16,6 +16,7 @@ const FieldRatingInput = ({
         {label}
       </label>
       <StarRating
+        id={field.name}
         value={values.rating}
         setFieldValue={setFieldValue}
         ratingCount={RATING_COUNT}
