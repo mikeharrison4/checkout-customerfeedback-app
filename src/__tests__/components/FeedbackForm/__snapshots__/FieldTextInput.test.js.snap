@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldTextInput.jsx should render correctly errors are present but the field has not been touched 1`] = `
+<div
+  className="relative w-full mockClassName"
+>
+  <input
+    aria-labelledby="mockLabel"
+    className="bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 "
+    disabled={false}
+    id="mockFieldName"
+    name="mockFieldName"
+  />
+  <FieldLabel
+    className="w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all -top-4 text-xs"
+    error="Required"
+    label="mockLabel"
+    name="mockFieldName"
+  />
+</div>
+`;
+
+exports[`FieldTextInput.jsx should render correctly when field value is empty 1`] = `
+<div
+  className="relative w-full mockClassName"
+>
+  <input
+    aria-labelledby="mockLabel"
+    className="bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 "
+    disabled={false}
+    id="mockFieldName"
+    name="mockFieldName"
+  />
+  <FieldLabel
+    className="w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all text-xl top-2"
+    label="mockLabel"
+    name="mockFieldName"
+  />
+</div>
+`;
+
+exports[`FieldTextInput.jsx should render correctly when no className is provided 1`] = `
+<div
+  className="relative w-full "
+>
+  <input
+    aria-labelledby="mockLabel"
+    className="bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 "
+    disabled={false}
+    id="mockFieldName"
+    name="mockFieldName"
+  />
+  <FieldLabel
+    className="w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all -top-4 text-xs"
+    label="mockLabel"
+    name="mockFieldName"
+  />
+</div>
+`;
+
+exports[`FieldTextInput.jsx should render correctly when no errors are present 1`] = `
+<div
+  className="relative w-full mockClassName"
+>
+  <input
+    aria-labelledby="mockLabel"
+    className="bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 "
+    disabled={false}
+    id="mockFieldName"
+    name="mockFieldName"
+  />
+  <FieldLabel
+    className="w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all -top-4 text-xs"
+    label="mockLabel"
+    name="mockFieldName"
+  />
+</div>
+`;
+
+exports[`FieldTextInput.jsx should show errors when errors are present and the field has been touched 1`] = `
+<div
+  className="relative w-full mockClassName"
+>
+  <input
+    aria-labelledby="mockLabel"
+    className="bg-transparent w-full border-b py-2 text-xl text-white focus:outline-none peer focus:invalid:border-pink-500 border-pink-500"
+    disabled={false}
+    id="mockFieldName"
+    name="mockFieldName"
+  />
+  <FieldLabel
+    className="w-full absolute pointer-events-none left-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all -top-4 text-xs"
+    error="Required"
+    hasErrorOccurred={true}
+    label="mockLabel"
+    name="mockFieldName"
+  />
+</div>
+`;

@@ -5,8 +5,6 @@ import FieldTextInput from './Fields/FieldTextInput';
 import { validateForm } from '../../utils/formValidation';
 import FieldRatingInput from './Fields/FieldRatingInput';
 import FieldTextArea from './Fields/FieldTextArea';
-import axios from 'axios';
-import { useMutation, useQueryClient } from 'react-query';
 import LoadingSpinner from '../Util/LoadingSpinner';
 import ResponseMessage from './ResponseMessage';
 import Button from '../Util/Button';
@@ -19,18 +17,8 @@ const initialFormValues = {
   comment: ''
 };
 
-// const postComment = async (formValues) => await axios.post(
-//   'http://localhost:3001/comments',
-//   { ...formValues }
-// );
-
 const FeedbackForm = () => {
-  // const queryClient = useQueryClient();
   let responseMessage = '';
-
-  // const { mutate: addComment, isSuccess, isError } = useMutation(postComment, {
-  //   onSuccess: () => queryClient.invalidateQueries('comments')
-  // });
 
   const { addComment, isSuccess, isError } = usePostComment();
 

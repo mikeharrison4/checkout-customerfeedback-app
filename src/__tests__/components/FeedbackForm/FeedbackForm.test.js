@@ -1,8 +1,9 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FeedbackForm from '../../../components/FeedbackForm/FeedbackForm';
 import { usePostComment } from '../../../components/FeedbackForm/usePostComment';
 import { Formik } from 'formik';
+import content from '../../../data/feedbackForm.json';
 
 jest.mock('../../../components/FeedbackForm/usePostComment', () => ({
   usePostComment: jest.fn(),
@@ -10,7 +11,7 @@ jest.mock('../../../components/FeedbackForm/usePostComment', () => ({
 
 const resetForm = jest.fn();
 
-describe('FeedbackForm.js',  () => {
+describe('FeedbackForm.jsx',  () => {
   beforeEach(() => {
     usePostComment.mockImplementation(() => ({
       addComment: jest.fn(),
@@ -65,21 +66,30 @@ describe('FeedbackForm.js',  () => {
     expect(resetForm).toHaveBeenCalledTimes(1);
   });
 
-  it('should call validation and return empty array when form is valid', async () => {
-    const renderedComponent = shallow(<FeedbackForm />);
-    const validate = renderedComponent.find('Formik').props().validate;
-    const errors = validate({
-      name: 'mockName', email: 'mockEmail@mockaroo.com', comment: 'mockComment'
-    });
-    expect(errors).toEqual({ name: 'mockName', email: 'mockEmail@mockaroo.com', comment: 'mockComment' });
-  });
-
-  it('should call validation and return suitable errors', async () => {
-    const renderedComponent = shallow(<FeedbackForm />);
-    const validate = renderedComponent.find('Formik').props().validate;
-    const errors = validate({});
-    expect(errors).toEqual({ name: 'Required', email: 'Required', comment: 'Required' });
-  });
+  // it('should call validation and return empty object when form is valid', async () => {
+  //   const renderedComponent = shallow(<FeedbackForm />);
+  //   const validate = renderedComponent.find('Formik').props().validate;
+  //   const errors = validate({
+  //     name: 'mockName', email: 'mockEmail@mockaroo.com', comment: 'mockComment'
+  //   });
+  //   expect(errors).toEqual({});
+  // });
+  //
+  // it('should call validation and return suitable errors when form is not filled out correctly', async () => {
+  //   const renderedComponent = shallow(<FeedbackForm />);
+  //   const validate = renderedComponent.find('Formik').props().validate;
+  //   const errors = validate({});
+  //   expect(errors).toEqual({ name: 'Required', email: 'Required', comment: 'Required' });
+  // });
+  //
+  // it('should call validation and return suitable errors when form is not filled out correctly 1', async () => {
+  //   const renderedComponent = shallow(<FeedbackForm />);
+  //   const validate = renderedComponent.find('Formik').props().validate;
+  //   const errors = validate({
+  //     name: 'mockName', email: 'mockInvalidEmail', comment: 'mockComment'
+  //   });
+  //   expect(errors).toEqual({ email: content.invalidEmail });
+  // });
 
   it('should render the formik children fields correctly when isSubmitting is false', () => {
     const renderedComponent = shallow(<FeedbackForm />);
@@ -95,5 +105,47 @@ describe('FeedbackForm.js',  () => {
       .find(Formik)
       .renderProp('children')({ isSubmitting: true });
     expect(children).toMatchSnapshot();
+  });
+});
+
+describe('Form Validation', () => {
+  it('should call validation and return empty object when form values are valid', async () => {
+    const renderedComponent = shallow(<FeedbackForm />);
+    const validate = renderedComponent.find('Formik').props().validate;
+    const errors = validate({
+      name: 'mockName',
+      email: 'mockEmail@mockaroo.com',
+      comment: 'mockComment'
+    });
+    expect(errors).toEqual({});
+  });
+
+  it('should call validation and return suitable errors when all required form values are missing', async () => {
+    const renderedComponent = shallow(<FeedbackForm />);
+    const validate = renderedComponent.find('Formik').props().validate;
+    const errors = validate({});
+    expect(errors).toEqual({
+      name: content.required,
+      email: content.required,
+      comment: content.required
+    });
+  });
+
+  it('should call validation and return suitable error when email is invalid', async () => {
+    const renderedComponent = shallow(<FeedbackForm />);
+    const validate = renderedComponent.find('Formik').props().validate;
+    const errors = validate({
+      name: 'mockName', email: 'mockInvalidEmail', comment: 'mockComment'
+    });
+    expect(errors).toEqual({ email: content.invalidEmail });
+  });
+
+  it('should call validation and return suitable error when name is invalid', async () => {
+    const renderedComponent = shallow(<FeedbackForm />);
+    const validate = renderedComponent.find('Formik').props().validate;
+    const errors = validate({
+      name: 'mockInvalidName12345', email: 'mockEmail@mockaroo.com', comment: 'mockComment'
+    });
+    expect(errors).toEqual({ name: content.invalidName });
   });
 });

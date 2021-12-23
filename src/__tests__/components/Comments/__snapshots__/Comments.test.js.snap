@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments.jsx should render correctly when isLoading and isError are both false 1`] = `
+<Fragment>
+  <RatingTrends
+    commentRatings={
+      Object {
+        "5": 1,
+      }
+    }
+  />
+  <LatestComments
+    comments={
+      Array [
+        Object {
+          "comment": "mockComment",
+          "email": "mockEmail@mockaroo.com",
+          "id": 1,
+          "name": "mockName",
+          "rating": 5,
+        },
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`Comments.jsx should render correctly when isLoading is true 1`] = `
+<div
+  className="flex justify-center items-center"
+>
+  <LoadingSpinner />
+</div>
+`;
+
+exports[`Comments.jsx should render correctly when isLoading is true 2`] = `
+<div
+  className="flex justify-center items-center"
+>
+  <Error
+    errorMessage="Comments cannot be loaded at this time, we apologies for any inconvenience."
+  />
+</div>
+`;

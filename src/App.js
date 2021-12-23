@@ -5,14 +5,14 @@ import Comments from './components/Comments/Comments';
 
 function App() {
   return (
-    <div className="App font-roboto">
+    <main className="App font-roboto">
       <Container className='bg-primary'>
         <FeedbackForm />
       </Container>
       <Container>
         <Comments />
       </Container>
-    </div>
+    </main>
   );
 }
 

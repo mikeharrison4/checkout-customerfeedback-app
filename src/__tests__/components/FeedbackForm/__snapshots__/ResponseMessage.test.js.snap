@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponseMessage.jsx should render correctly when useState showPopup is true 1`] = `
+<div
+  className="absolute top-0 right-0 m-3 text-white bg-green-500"
+>
+  <div
+    className="flex justify-between p-3"
+  >
+    mockMessage
+  </div>
+</div>
+`;
+
+exports[`ResponseMessage.jsx should render correctly when useState showPopup is true and isError is true 1`] = `
+<div
+  className="absolute top-0 right-0 m-3 text-white bg-pink-500"
+>
+  <div
+    className="flex justify-between p-3"
+  >
+    mockMessage
+  </div>
+</div>
+`;
