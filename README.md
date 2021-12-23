@@ -3,7 +3,7 @@ All below commands can be run in the projects root directory.
 
 `npm run start` - Starts the app on 
 [http://localhost:3000](http://localhost:3000)
-and runs the mock server on 
+and starts the mock server on 
 [http://localhost:3001](http://localhost:3001)
 
 `npm run test` - Runs the test suite and shows its coverage
@@ -16,7 +16,7 @@ and the list of comments.
 
 Submitting a comment using the feedback form will automatically update the comment list without the need to refresh. You will not be able to submit feedback if the form is not filled out correctly.
 
-Under the comment section, there is also a button which gives you the option to see a graph with useful rating metrics that have been left by other users.
+Under the comment section, there is a button which gives you the option to see a graph with useful rating metrics that have been left by other users.
 
 # Assumptions
 
