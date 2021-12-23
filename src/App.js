@@ -7,6 +7,12 @@ function App() {
   return (
     <main className="App font-roboto">
       <Container className='bg-primary'>
+        <div className="absolute w-12 top-5 right-5">
+          <img
+            src="checkout-logo_transparent.png"
+            alt="Checkout Logo"
+          />
+        </div>
         <FeedbackForm />
       </Container>
       <Container>

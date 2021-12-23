@@ -66,36 +66,11 @@ describe('FeedbackForm.jsx',  () => {
     expect(resetForm).toHaveBeenCalledTimes(1);
   });
 
-  // it('should call validation and return empty object when form is valid', async () => {
-  //   const renderedComponent = shallow(<FeedbackForm />);
-  //   const validate = renderedComponent.find('Formik').props().validate;
-  //   const errors = validate({
-  //     name: 'mockName', email: 'mockEmail@mockaroo.com', comment: 'mockComment'
-  //   });
-  //   expect(errors).toEqual({});
-  // });
-  //
-  // it('should call validation and return suitable errors when form is not filled out correctly', async () => {
-  //   const renderedComponent = shallow(<FeedbackForm />);
-  //   const validate = renderedComponent.find('Formik').props().validate;
-  //   const errors = validate({});
-  //   expect(errors).toEqual({ name: 'Required', email: 'Required', comment: 'Required' });
-  // });
-  //
-  // it('should call validation and return suitable errors when form is not filled out correctly 1', async () => {
-  //   const renderedComponent = shallow(<FeedbackForm />);
-  //   const validate = renderedComponent.find('Formik').props().validate;
-  //   const errors = validate({
-  //     name: 'mockName', email: 'mockInvalidEmail', comment: 'mockComment'
-  //   });
-  //   expect(errors).toEqual({ email: content.invalidEmail });
-  // });
-
   it('should render the formik children fields correctly when isSubmitting is false', () => {
     const renderedComponent = shallow(<FeedbackForm />);
     const children = renderedComponent
       .find(Formik)
-      .renderProp('children')({ isSubmitting: false });
+      .renderProp('children')({ isSubmitting: false, errors: {} });
     expect(children).toMatchSnapshot();
   });
 
@@ -103,7 +78,7 @@ describe('FeedbackForm.jsx',  () => {
     const renderedComponent = shallow(<FeedbackForm />);
     const children = renderedComponent
       .find(Formik)
-      .renderProp('children')({ isSubmitting: true });
+      .renderProp('children')({ isSubmitting: true, errors: {} });
     expect(children).toMatchSnapshot();
   });
 });

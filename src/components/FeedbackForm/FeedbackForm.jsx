@@ -45,7 +45,7 @@ const FeedbackForm = () => {
         validate={(values) => validateForm(values)}
         onSubmit={handleFormSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, errors }) => (
           <Form className="text-white">
             <div className="mt-8 flex justify-between">
               <Field
@@ -81,8 +81,8 @@ const FeedbackForm = () => {
               <Button
                 id='submit'
                 type="submit"
-                disabled={isSubmitting}
-                className="text-primary bg-white"
+                disabled={Object.keys(errors).length > 0 || isSubmitting}
+                className="text-primary bg-white cursor-pointer disabled:opacity-75"
                 aria-label={content.submit}
               >
                 <span className="flex items-center">

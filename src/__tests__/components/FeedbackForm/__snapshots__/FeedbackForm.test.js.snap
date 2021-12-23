@@ -123,7 +123,7 @@ exports[`FeedbackForm.jsx should render the formik children fields correctly whe
   <div>
     <Button
       aria-label="Submit"
-      className="text-primary bg-white"
+      className="text-primary bg-white cursor-pointer disabled:opacity-75"
       disabled={false}
       id="submit"
       type="submit"
@@ -181,7 +181,7 @@ exports[`FeedbackForm.jsx should render the formik children fields correctly whe
   <div>
     <Button
       aria-label="Submit"
-      className="text-primary bg-white"
+      className="text-primary bg-white cursor-pointer disabled:opacity-75"
       disabled={true}
       id="submit"
       type="submit"

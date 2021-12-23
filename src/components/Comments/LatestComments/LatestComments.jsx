@@ -40,6 +40,16 @@ const LatestComments = ({ comments }) => {
         commentsPerPage={commentsPerPage}
         paginate={paginate}
       />
+      {/*{ comments.length > commentsPerPage*/}
+      {/*  && (*/}
+      {/*    <Pagination*/}
+      {/*      currentPage={currentPage}*/}
+      {/*      totalComments={comments.length}*/}
+      {/*      commentsPerPage={commentsPerPage}*/}
+      {/*      paginate={paginate}*/}
+      {/*    />   */}
+      {/*  )*/}
+      {/*}*/}
     </div>
   );
 };
