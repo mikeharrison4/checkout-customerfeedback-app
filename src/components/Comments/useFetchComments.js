@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const fetchComments = async () => await axios.get('http://localhost:3001/comments');
 
-
 export const useFetchComments = (setComments) => {
   const {
     isLoading,

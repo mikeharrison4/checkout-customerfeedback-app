@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const ResponseMessage = ({ message, isError }) => {
   const [showPopup, setShowPopup] = React.useState(true);

@@ -17,10 +17,7 @@ const RatingTrends = ({ commentRatings }) => {
       <div className="my-8">
         { showChart
           && (
-            <>
-              <p className='mb-3'>{content.ratingTrendsDescription}</p>
-              <BarGraph ratings={commentRatings} />
-            </>
+            <BarGraph ratings={commentRatings} />
           )
         }
       </div>

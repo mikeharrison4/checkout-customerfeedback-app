@@ -6,7 +6,6 @@ const Pagination = ({
   commentsPerPage,
   paginate
 }) => {
-
   const pageNumbers = [];
   for (let i = 1; i < (totalComments / commentsPerPage) + 1; i++) {
     pageNumbers.push(i);

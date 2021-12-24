@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import RatingTrends from './RatingTrends/RatingTrends';
 import LatestComments from './LatestComments/LatestComments';
 import LoadingSpinner from '../Util/LoadingSpinner';
