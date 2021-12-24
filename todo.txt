@@ -4,4 +4,3 @@ To do list:
 - add propTypes?
 - make BG the same gradient as checkout.com
 - animate responseMessage popup so it transitions nicely
-- update Read.me

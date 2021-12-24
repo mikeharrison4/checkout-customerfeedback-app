@@ -57,6 +57,7 @@ I used snapshot testing to test the UI that renders is correct given different s
 To get around this problem, a good rule to stick to is to only take one snapshot per component, this one snapshot can test the default state of the component, and then the subsequent tests can check the other states by verifying the presence of a certain id or class. This would be something I would improve if I had more time.
 
 Please find how to run the tests in the _**Installation**_ section.
+Tests can be found inside the _src/tests_ folder
 
 # Potential Improvements
 
